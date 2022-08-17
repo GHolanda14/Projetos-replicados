@@ -1,0 +1,67 @@
+.App {
+  text-align: center;  
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/*Header*/
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/*Tasks*/
+.App .tasks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: turquoise;
+}
+
+.App .tasks ul{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 700px;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  list-style: none;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.App .tasks ul li{
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+
+/*Form*/
+.App .newTask{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App .newTask form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.App .newTask form label{
+  font-size: 1.3em;
+}
+
+input{
+  align-self: flex-end;
+}

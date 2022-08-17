@@ -1,0 +1,14 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "task": "Colocar o quadro na parede",
+      "done": false
+    },
+    {
+      "id": 2,
+      "task": "Varrer a casa",
+      "done": true
+    }
+  ]
+}
