@@ -43,6 +43,10 @@
   font-size: 1.5em;
 }
 
+.active{
+  text-decoration: line-through;
+}
+
 
 /*Form*/
 .App .newTask{

@@ -26,6 +26,16 @@ export const useFetch = (url) => {
       });
       setTaskId(dados);
     }
+    else if( method === "PATCH"){
+      setTaskId(dados.id);
+      setConfig({
+        method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({task: dados.task, done: !dados.done}),
+      })
+    }
     setMethod(method);
   };
 
@@ -43,7 +53,17 @@ export const useFetch = (url) => {
         } catch (error) {
           console.log(error.message);
         }
-      } else if (method === "DELETE") {
+      } else if (method === "PATCH") {
+        try {
+          const res = await fetch(`${url}/${taskId}`, config);
+
+          json = await res.json();
+
+          setCallFetch(json);
+        } catch (error) {
+          console.log(error.message);
+        }
+      }else if(method === "UPDATE"){
         try {
           const res = await fetch(`${url}/${taskId}`, config);
 

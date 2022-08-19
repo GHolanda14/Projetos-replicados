@@ -20,12 +20,24 @@ function App() {
     setTarefa("");
   };
 
+  const toggleTarefa = (task) => {    
+    document.getElementById(task.id).classList.toggle("active");
+    if(task.done){
+      httpConfig(task,"PATCH");
+    }else{
+      setTimeout(() => {
+        httpConfig(task,"PATCH");
+      },500)
+    }     
+  }
+
   return (
     <div className="App">
       <div className="App-header">
         <h1>Lista de tarefas</h1>
       </div>
 
+      {dados && dados.filter((t) => !t.done).length > 0 && 
       <div className="tasks">
         {dados &&
           (dados.length === 0 ? (
@@ -33,10 +45,12 @@ function App() {
           ) : 
           (
             <ul>          
+              <h2>Tarefas a serem feitas: </h2>
               {dados.map((tarefa) => (
-                <li
+                !tarefa.done && <li
                   key={tarefa.id}
-                  onClick={() => httpConfig(tarefa.id, "DELETE")}
+                  id={tarefa.id}
+                  onClick={() => toggleTarefa(tarefa)}
                 >
                   {tarefa.task}
                 </li>
@@ -44,7 +58,30 @@ function App() {
             </ul>
         ))}
       </div>
-
+}
+  {dados && dados.filter((t) => t.done).length > 0 && 
+      <div className="tasks">
+      {dados &&
+          (dados.length === 0 ? (
+            <h2>Não existem tarefas cadastradas!</h2>
+          ) : 
+          (
+            <ul>
+              <h2>Tarefas feitas</h2>          
+              {dados.map((tarefa) => (
+                tarefa.done && <li
+                  key={tarefa.id}
+                  className="active"
+                  id={tarefa.id}
+                  onClick={() => toggleTarefa(tarefa)}
+                >
+                  {tarefa.task}
+                </li>
+              ))}
+            </ul>
+        ))}
+      </div>
+}
       <div className="newTask">
         <form onSubmit={handleForm}>
           <label htmlFor="task">Nova tarefa:</label>
