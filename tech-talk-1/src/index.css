@@ -74,3 +74,16 @@ button:disabled {
   cursor: not-allowed;
   color: #fff;
 }
+
+p{
+  text-align: center;
+  margin-top: .3em;
+}
+
+.success{
+  color: #3DF4CF;
+}
+
+.error{
+  color: #FF1c24;
+}
