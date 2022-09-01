@@ -21,8 +21,9 @@
 .App .tasks {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: turquoise;
+  min-height: 60vh;
 }
 
 .App .tasks ul{

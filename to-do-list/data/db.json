@@ -2,13 +2,23 @@
   "tarefas": [
     {
       "task": "teste",
-      "done": true,
+      "done": false,
       "id": 1
     },
     {
       "task": "Tarefa 2",
-      "done": true,
+      "done": false,
       "id": 2
+    },
+    {
+      "task": "Varrer a casa",
+      "done": true,
+      "id": 3
+    },
+    {
+      "task": "",
+      "done": false,
+      "id": 4
     }
   ]
 }

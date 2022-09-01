@@ -1,0 +1,19 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar ul{
+    display: flex; 
+    list-style: none;
+}
+
+.navBar ul li{
+    display: flex;
+    margin: 10px 50px;
+}
+
+.navBar img{
+    max-width: 8%;
+}
